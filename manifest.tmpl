@@ -1,0 +1,19 @@
+image: toolhippie/ansible-later:latest
+manifests:
+  -
+    image: toolhippie/ansible-later:amd64
+    platform:
+      architecture: amd64
+      os: linux
+  -
+    image: toolhippie/ansible-later:arm64v8
+    platform:
+      architecture: arm64
+      os: linux
+      variant: v8
+  -
+    image: toolhippie/ansible-later:arm32v6
+    platform:
+      architecture: arm
+      os: linux
+      variant: v6
