@@ -9,5 +9,7 @@ ENTRYPOINT ["/usr/bin/ansible-later"]
 
 RUN apk update && \
   apk upgrade && \
+  apk add libffi-dev openssl-dev && \
   pip3 install -U pip ansible-later && \
+  apk del libffi-dev openssl-dev && \
   rm -rf /var/cache/apk/*
