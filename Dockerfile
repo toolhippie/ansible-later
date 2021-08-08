@@ -9,7 +9,6 @@ ENV LATER_VERSION=0.5.10
 
 RUN apk update && \
   apk upgrade && \
-  apk add libffi-dev openssl-dev && \
-  pip3 install -U pip ansible-later==${LATER_VERSION} && \
-  apk del libffi-dev openssl-dev && \
+  apk del py3-six && \
+  pip3 install -U ansible-later==${LATER_VERSION} && \
   rm -rf /var/cache/apk/*
