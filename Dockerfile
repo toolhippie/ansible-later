@@ -9,6 +9,6 @@ ENV LATER_VERSION=0.5.10
 
 RUN apk update && \
   apk upgrade && \
-  apk del py3-six && \
+  apk del py3-six py3-tox && \
   pip3 install -U ansible-later==${LATER_VERSION} && \
   rm -rf /var/cache/apk/*
