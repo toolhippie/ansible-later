@@ -9,5 +9,7 @@ ENV ANSIBLE_LATER_VERSION=0.5.10
 
 RUN apk update && \
   apk upgrade && \
+  apk add rust cargo && \
   pip3 install -U ansible-later==${ANSIBLE_LATER_VERSION} ansible && \
+  apk del rust cargo && \
   rm -rf /var/cache/apk/*
