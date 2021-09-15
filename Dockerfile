@@ -11,4 +11,4 @@ RUN apk update && \
   apk add rust cargo && \
   pip3 install -U ansible-later==${ANSIBLE_LATER_VERSION} ansible && \
   apk del rust cargo && \
-  rm -rf /var/cache/apk/*
+  rm -rf /var/cache/apk/* /root/.cache
