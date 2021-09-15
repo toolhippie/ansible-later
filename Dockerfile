@@ -1,4 +1,4 @@
-FROM webhippie/python:3.9
+FROM webhippie/alpine:latest
 ENTRYPOINT [""]
 ENV PY_COLORS=1
 ENV ANSIBLE_FORCE_COLOR=true
@@ -8,7 +8,6 @@ ENV ANSIBLE_LATER_VERSION=0.5.14
 
 RUN apk update && \
   apk upgrade && \
-  apk add rust cargo && \
+  apk add python3 python3-dev py3-pip py3-cryptography && \
   pip3 install -U ansible-later==${ANSIBLE_LATER_VERSION} ansible && \
-  apk del rust cargo && \
   rm -rf /var/cache/apk/* /root/.cache
