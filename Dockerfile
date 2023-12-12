@@ -6,9 +6,12 @@ ENV ANSIBLE_FORCE_COLOR=true
 # renovate: datasource=pypi depName=ansible-later
 ENV ANSIBLE_LATER_VERSION=3.4.2
 
+# renovate: datasource=pypi depName=ansible
+ENV ANSIBLE_CORE_VERSION=9.1.0
+
 RUN apk update && \
   apk upgrade && \
-  apk add python3 python3-dev py3-pip py3-cryptography cargo && \
-  pip3 install -U ansible-later==${ANSIBLE_LATER_VERSION} ansible && \
-  apk del cargo && \
+  apk add --no-cache bash python3 python3-dev py3-pip libffi-dev openssl-dev cargo && \
+  pip3 install --break-system-packages -U ansible-later==${ANSIBLE_LATER_VERSION} ansible==${ANSIBLE_CORE_VERSION} && \
+  apk del libffi-dev openssl-dev cargo && \
   rm -rf /var/cache/apk/* /root/.cache
