@@ -4,7 +4,7 @@ ENV PY_COLORS=1
 ENV ANSIBLE_FORCE_COLOR=true
 
 # renovate: datasource=pypi depName=ansible-later
-ENV ANSIBLE_LATER_VERSION=4.0.4
+ENV ANSIBLE_LATER_VERSION=4.0.5
 
 # renovate: datasource=pypi depName=ansible
 ENV ANSIBLE_CORE_VERSION=10.0.1
